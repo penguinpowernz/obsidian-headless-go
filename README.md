@@ -5,7 +5,9 @@
 Headless client for [Obsidian Sync](https://obsidian.md/sync) and [Obsidian Publish](https://obsidian.md/publish).
 Sync and publish your vaults from the command line without the desktop app.
 
-In 2026 using NPM is security nightmare. This repository will be deleted if Obsidian releases a client in safe language like Golang or Rust.
+In 2026 using NPM is security nightmare. This port allows us to avoid dangerous software distribution channels. This repository will be deleted if Obsidian releases an official client in a safe language like Golang or Rust.
+
+**THIS HAS NOT YET BEEN TESTED BY A HUMAN AND SHOULD BE CONSIDERED ALPHA SOFTWARE**
 
 ## Quick Start
 
@@ -29,7 +31,7 @@ ob publish-list-sites
 ```
 
 **Current limitation:** Authentication and vault/site management work. File sync/publish protocols are implemented but not yet wired to file operations.
-
+ 
 ## Status
 
 This is a **successful port** from the heavily minified JavaScript version. The original code appeared impossible to reverse-engineer, but after beautifying with Prettier, all API endpoints and protocols became clear.
