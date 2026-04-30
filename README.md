@@ -9,6 +9,8 @@ In 2026 using NPM is security nightmare. This port allows us to avoid dangerous 
 
 **THIS HAS NOT YET BEEN TESTED BY A HUMAN AND SHOULD BE CONSIDERED ALPHA SOFTWARE**
 
+<img width="529" height="472" alt="image" src="https://github.com/user-attachments/assets/22c94153-cde3-4924-80d5-7c3806fc6523" />
+
 ## Quick Start
 
 ```bash
