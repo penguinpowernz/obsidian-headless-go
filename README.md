@@ -5,6 +5,8 @@
 Headless client for [Obsidian Sync](https://obsidian.md/sync) and [Obsidian Publish](https://obsidian.md/publish).
 Sync and publish your vaults from the command line without the desktop app.
 
+In 2026 using NPM is security nightmare. This repository will be deleted if Obsidian releases a client in safe language like Golang or Rust.
+
 ## Quick Start
 
 ```bash
