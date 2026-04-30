@@ -96,6 +96,8 @@ This is a **successful port** from the heavily minified JavaScript version. The 
 ## Why Port to Go?
 
 The original JavaScript implementation is heavily minified (167 lines with 11,000+ character line lengths), making it difficult to:
+
+- NPM presents an untenable security risk in 2026
 - Understand the sync/publish protocols
 - Modify or extend functionality
 - Debug issues
@@ -349,16 +351,6 @@ The core infrastructure and protocols are complete. What remains is integration:
    - Configuration validation
    - Dry-run mode
 
-## Contributing
-
-The reverse engineering is **complete**! All API endpoints and protocols are documented. Contributions are welcome for:
-
-- Wiring up the sync engine
-- Implementing publish functionality
-- Adding tests
-- Improving error handling
-- Documentation and examples
-
 ## Development Notes
 
 ### How the Port Was Completed
@@ -367,6 +359,7 @@ The JavaScript code initially appeared impossible to reverse-engineer:
 - 167 lines of heavily minified code
 - Line lengths exceeding 11,000 characters
 - Meaningless variable names (`s`, `e`, `t`, etc.)
+- Claude Code CLI
 
 **The breakthrough:** Using `npx prettier cli.js > cli-beautified.js` made the code completely readable:
 - API endpoints became visible as string literals
@@ -384,7 +377,6 @@ The refactoring focused on:
 - **Separation of concerns**: Helper packages for auth, vault, site, UI
 - **Better maintainability**: Single source of truth for common operations
 
-See `REFACTORING_SUMMARY.md` for detailed metrics.
 
 ## Comparison: JavaScript vs Go
 
@@ -398,17 +390,7 @@ See `REFACTORING_SUMMARY.md` for detailed metrics.
 | Debugging | Nearly impossible | Standard Go tools |
 | Security audit | Extremely difficult | Easy to review |
 | Modifications | Requires JS expertise | Standard Go patterns |
-
-## Documentation
-
-- **README-GO.md** - This file (overview and usage)
-- **PORTING_COMPLETE.md** - Detailed porting notes and discoveries
-- **IMPLEMENTATION_NOTES.md** - Original implementation plan
-- **REFACTORING_SUMMARY.md** - Code quality improvements
-- **SECURITY_AUDIT.md** - Security analysis and recommendations
-- **SECURITY_FIXES_APPLIED.md** - Applied security fixes
-- **TODO.md** - Remaining work items
-- **CHANGELOG.md** - Version history (from original JS)
+| Malware | NPM | No NPM |
 
 ## Disclaimer
 
@@ -416,6 +398,7 @@ This is an unofficial tool and is not affiliated with or endorsed by Obsidian or
 
 **Legal:** Reverse engineering the protocol may violate Obsidian's Terms of Service. This project is for **educational purposes** and **personal use** only.
 
-**Support Obsidian:** Consider subscribing to official [Obsidian Sync](https://obsidian.md/sync) and [Publish](https://obsidian.md/publish) services rather than using third-party clients.
+**Support Obsidian:** Consider subscribing to official [Obsidian Sync](https://obsidian.md/sync) and [Publish](https://obsidian.md/publish) services 
+rather than using third-party clients. **Convince them to use languages that don't present security nightmares via their distribution channels**
 
 **Use at your own risk.** Always backup your vaults before using sync tools. The authors are not responsible for data loss.
